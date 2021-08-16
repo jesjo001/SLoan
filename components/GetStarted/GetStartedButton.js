@@ -1,13 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+// import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function GetStartedButton() {
+export default function GetStartedButton({ handleNavigationClick }) {
 
     const pressHandler = () => {
-
+        console.log("hello")
     }
     return (
 
@@ -17,7 +16,7 @@ export default function GetStartedButton() {
                 <Text style={styles.text}>Are you out of cash? Never mind.</Text>
                 <Text style={styles.text}>SoftLoan is here to </Text>
                 <Text style={styles.text}>foot your bills</Text>
-                <TouchableOpacity style={styles.button} onPress={() => pressHandler()}>
+                <TouchableOpacity style={styles.button} onPress={handleNavigationClick}>
                     <Text style={styles.buttonText} >Get Started </Text><MaterialIcons name="arrow-forward" size={24} color="black" />
                 </TouchableOpacity>
             </View>
