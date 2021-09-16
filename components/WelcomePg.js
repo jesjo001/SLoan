@@ -7,6 +7,14 @@ import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Image } from
 // import appIcon from '@assets/appIcon2.png'
 
 export default function WelcomePg({ navigation }) {
+
+    const handleNavigationClick = (page) => {
+        if (page === "Login") navigation.navigate('Login');
+
+        if (page === "SignUp") navigation.navigate('SignUp');
+
+    }
+
     return (
 
         <ImageBackground source={require('../assets/login3.png')} style={styles.container} >
@@ -15,11 +23,11 @@ export default function WelcomePg({ navigation }) {
                     <Image source={require('../assets/appicon2.png')} style={styles.logo} />
                 </View>
                 <Text style={styles.text}>Welcome to SoftLoan</Text>
-                <TouchableOpacity style={styles.button}  >
+                <TouchableOpacity style={styles.button} onPress={() => handleNavigationClick('Login')}  >
                     <Text>Login</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button2} >
+                <TouchableOpacity style={styles.button2} onPress={() => handleNavigationClick('SignUp')}>
                     <Text style={styles.textWhite}>Sign Up</Text>
                 </TouchableOpacity>
                 <StatusBar style="light" />

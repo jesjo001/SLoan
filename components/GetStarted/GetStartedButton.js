@@ -26,7 +26,7 @@ export default function GetStartedButton({ handleNavigationClick }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 0.5,
         borderRadius: 1,
         borderTopRightRadius: 25,
         borderWidth: 1,
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '80%',
-        height: '28%',
         flexDirection: 'row',
         marginLeft: 0,
     },
