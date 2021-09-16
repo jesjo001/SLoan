@@ -12,7 +12,7 @@ import Button from '../../utilities/Button'
 
 import LoginButton from '../Login/LoginButton';
 
-export default function Login({ navigation, userLogin }) {
+export default function PasswordReset({ navigation, userLogin }) {
 
     const handleLogin = () => {
 
@@ -31,11 +31,12 @@ export default function Login({ navigation, userLogin }) {
                         <View style={styles.logoContainer}>
                             <Image source={require('../../assets/group43.png')} style={styles.logo} />
                         </View>
-                        <Text style={styles.text}>Enter the confirmation code that was sent to your mail.</Text>
+                        <Text style={styles.text}>Recover your account</Text>
+                        <Text style={styles.SubText}>We will send you a link to recover your account</Text>
                     </View>
 
                     <Formik
-                        initialValues={{ code: ''}}
+                        initialValues={{ email: '' }}
                         onSubmit={(values, actions) => {
                             console.log(values);
                             actions.resetForm();
@@ -46,17 +47,17 @@ export default function Login({ navigation, userLogin }) {
                             <View style={styles.InputContainer} >
                                 <TextInput
                                     style={globalStyles.textInput}
-                                    placeholder="Enter confirmation code"
-                                    onChangeText={props.handleChange('code')}
-                                    value={props.values.code}
-                                    placeholderTextColor='white'
+                                    placeholder="Enter email"
+                                    onChangeText={props.handleChange('email')}
+                                    value={props.values.email}
+                                      placeholderTextColor='white'
                                 />
 
                                 <Button
                                     textColor='black'
                                     buttonType='white'
                                     handleClick={props.handleSubmit}
-                                    text='Submit'
+                                    text='Reset Password'
 
                                 />
                             </View>
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
         height: '100%',
         margin: 0,
     },
-    InputContainer:{
+    InputContainer: {
         display: 'flex',
         flex: 0.5,
         flexDirection: 'column',
@@ -104,6 +105,17 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         padding: 10,
+        paddingBottom:0,
+        marginBottom: 0,
+        textAlign: 'center',
+    },
+    SubText: {
+        color: 'white',
+        fontSize: 15,
+        fontWeight: 'bold',
+        padding: 10,
+        marginTop:0,
+        paddingTop:0,
         marginBottom: 12,
         textAlign: 'center',
     },
@@ -133,7 +145,7 @@ const styles = StyleSheet.create({
     },
     logoArea: {
         display: 'flex',
-        flex:0.2,
+        flex: 0.2,
         flexDirection: 'column',
         justifyContent: 'space-between',
 
