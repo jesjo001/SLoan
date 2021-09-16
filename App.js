@@ -6,6 +6,7 @@ import WelcomePg from './components/WelcomePg';
 import GetStarted from './components/GetStarted/GetStarted';
 import Login from './components/Login/Login'
 import SignUp from './components/SignUp/SignUp';
+import ConfirmationPg from './components/Confirmation/ConfirmationPg';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,9 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="SignUp">
           {props => <SignUp {...props} userSignUp={userSignUp} />}
+        </Stack.Screen>
+        <Stack.Screen name="PasswordReset">
+          {props => <ConfirmationPg {...props} userSignUp={userSignUp} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
