@@ -11,6 +11,7 @@ import Button from '../../utilities/Button'
 // import loginIcon from '../assets/login3.png'
 
 import LoginButton from '../Login/LoginButton';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function PasswordReset({ navigation, userLogin }) {
 
@@ -53,13 +54,20 @@ export default function PasswordReset({ navigation, userLogin }) {
                                       placeholderTextColor='white'
                                 />
 
-                                <Button
-                                    textColor='black'
-                                    buttonType='white'
-                                    handleClick={props.handleSubmit}
-                                    text='Reset Password'
+                                <View>
+                                    <Button
+                                        textColor='black'
+                                        buttonType='white'
+                                        handleClick={props.handleSubmit}
+                                        text='Reset Password'
 
-                                />
+                                    />
+                                    <TouchableOpacity>
+                                        <Text style={{ color: 'white', textAlign: 'center', padding: 10,}}>Oh! I remember my PIN. Login</Text>
+                                    </TouchableOpacity>
+                                    
+                                </View>
+
                             </View>
                         )}
                     </Formik>
