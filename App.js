@@ -7,6 +7,7 @@ import GetStarted from './components/GetStarted/GetStarted';
 import Login from './components/Login/Login'
 import SignUp from './components/SignUp/SignUp';
 import ConfirmationPg from './components/Confirmation/ConfirmationPg';
+import PasswordReset from './components/PasswordResset/PasswordResset';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="GetStarted"
+        initialRouteName="PasswordReset"
         screenOptions={{
           headerShown: false
         }} >
@@ -36,8 +37,11 @@ export default function App() {
         <Stack.Screen name="SignUp">
           {props => <SignUp {...props} userSignUp={userSignUp} />}
         </Stack.Screen>
-        <Stack.Screen name="PasswordReset">
+        <Stack.Screen name="ConfirmationCode">
           {props => <ConfirmationPg {...props} userSignUp={userSignUp} />}
+        </Stack.Screen>
+        <Stack.Screen name="PasswordReset">
+          {props => <PasswordReset {...props} userSignUp={userSignUp} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
