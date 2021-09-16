@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import getStartedIcon from '../../assets/getstarted3.png';
 
 import GetStartedButton from './GetStartedButton';
@@ -16,7 +14,7 @@ export default function GetStarted({ navigation }) {
 
     return (
 
-        <ImageBackground source={require('../../assets/getstarted3.png')} style={styles.container}>
+        <ImageBackground source={require('../../assets/getstarted2.png')} style={styles.container}>
             <View style={styles.mainContent}>
                 <Text></Text>
                 <StatusBar style="light" />
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
         margin: 0,
     },
     mainContent: {
-        height: '100%',
+        height: '70%',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
